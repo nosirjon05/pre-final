@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>step-4</title>
+  <link rel="stylesheet" href="main.css">
+  <style>
+    #pw-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;z-index:9999}
+    #pw-box{background:#fff;padding:24px;border-radius:8px;max-width:320px;width:90%;box-shadow:0 6px 24px rgba(0,0,0,0.3);text-align:center}
+    #pw-box input{width:100%;padding:8px;margin-top:12px;margin-bottom:8px;font-size:16px}
+    #pw-box button{padding:8px 12px;font-size:16px}
+  </style>
+</head>
+<body>
+  <div id="pw-overlay" aria-hidden="false">
+    <div id="pw-box" role="dialog" aria-modal="true" aria-labelledby="pw-title">
+      <h2 id="pw-title">Sekinro ustoz, last but not least, bir sinifimizani eslili ╰(*°▽°*)╯!</h2>
+      <form id="pw-form">
+        <input id="pw-input" type="password" placeholder="Password"autocomplete="current-password" required />
+        <div>
+          <button class="clasmates" type="submit"><img src="photo_2025-09-30_08-03-42.jpg" alt="internetiz ishlamayapti"> <p class="mini">rasimni bosin</p></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const PASSWORD = 'A+'; 
+      const overlay = document.getElementById('pw-overlay');
+      const form = document.getElementById('pw-form');
+      const input = document.getElementById('pw-input');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(input.value === PASSWORD){
+          overlay.style.display = 'none';
+        } else {
+          input.value = '';
+          input.focus();
+          alert('Incorrect password');
+        }
+      });
+
+      document.addEventListener('focus', function(ev){
+        if(overlay.style.display !== 'none' && !overlay.contains(ev.target)) ev.stopPropagation();
+      }, true);
+    })();
+  </script>
+  
+
+
+    <div class="main-header">
+      <div class="header">
+        <h1 class="header-title">11"B"</h1>
+        <ul class="header-list">
+          <li class="header-list-items"><a class="header-list-items-link" href="Easy.html"><strong>Easy</strong></a></li>
+          <li class="header-list-items"><a class="header-list-items-link" href="Hard.html"><strong>Hard</strong></a></li>
+        </ul>
+      </div>
+
+         <Div>
+          <h3 class="header-h3">Ogohlantiruv!!!</h3>
+          <p class="text-link"></p>
+          <ul>
+            <li>Birinchidan, telefondan qiyinroq bosa tepada silka noutbook yoki kompyuter uchun</li>
+            <li>Ikkinchidan, savollar ikki xil turga bo'lingan "Easy" va "Hard" , ammo savollar bir xil.</li>
+            <li>uchinchidan, "Easy" qismida xar bir savolga alohida javob beriladi, "Hard" qismida esa barcha savollarga bittada javob beriladi. <br>
+              Shundan kelib chiqadiki hamma savolga to'gri javob beribgina ko'd qo'lga kiritasiz.</li>
+          </ul>
+        </Div>
+      </div>
+  
+</body>
+</html>

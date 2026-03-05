@@ -231,7 +231,7 @@
   <p class="result"></p>
 </div>
 
-<div class="question" data-correct="7">
+<div class="question" data-correct="5">
   <p>19.Oybekova Ziyoda haqida to'g'ri ma'lumot</p>
   <ul class="list">
     <li class="style"><label><input type="radio" name="q" value="3"> a) </label></li>
@@ -424,18 +424,26 @@ function checkCompletion() {
   const allAnswered = Array.from(questions).every(q =>
     q.querySelector('input[type="radio"]:checked')
   );
-  if (allAnswered && totalMistakes < 5) {
-    if (!document.querySelector('.final-result')) {
-      const p = document.createElement('p');
-      p.className = 'final-result';
-      p.textContent =
-        "🎉 Barcha savollarga javob berdingiz va xatolaringiz 30 tadan kam! Tabriklaymiz!  bu yakuniy kod The united classmates of high school ";
-      document.body.appendChild(p);
+  if (allAnswered) {
+    if (totalMistakes === 0) {
+      if (!document.querySelector('.final-result')) {
+        const p = document.createElement('p');
+        p.className = 'final-result';
+        p.textContent =
+          "🎉 Barcha savollarga javob berdingiz va xatolaringiz 5 tadan kam! Tabriklaymiz!  bu yakuniy kod The united classmates of high school Tabrikliman 30/30 shu munosabati bilan bitta lyuboy savolizga to'g'ri javob beraman.";
+        document.body.appendChild(p);
+      }
+    } else if (totalMistakes < 5) {
+      if (!document.querySelector('.final-result')) {
+        const p = document.createElement('p');
+        p.className = 'final-result';
+        p.textContent =
+          "🎉 Barcha savollarga javob berdingiz va xatolaringiz 5 tadan kam! Tabriklaymiz!  bu yakuniy kod The united classmates of high school ";
+        document.body.appendChild(p);
+      }
     }
   }
 }
 </script>
-</body>
-</html>
 </body>
 </html>

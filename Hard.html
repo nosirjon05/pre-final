@@ -424,7 +424,7 @@ function checkCompletion() {
   const allAnswered = Array.from(questions).every(q =>
     q.querySelector('input[type="radio"]:checked')
   );
-  if (allAnswered && totalMistakes < 30) {
+  if (allAnswered && totalMistakes < 5) {
     if (!document.querySelector('.final-result')) {
       const p = document.createElement('p');
       p.className = 'final-result';
